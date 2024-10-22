@@ -1,5 +1,6 @@
 ---
 // Component Imports
+import PricingComponent from "~/components/PricingComponent.astro";
 import Button from "../components/Button.astro";
 import HeroWithBackground from "../components/HeroWithBackground.astro";
 import HeroWithForm from "../components/HeroWithForm.astro";
@@ -7,13 +8,14 @@ import HeroWithImage from "../components/HeroWithImage.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 
 const content = {
-  title: "Home Page",
+  title: "Pricing",
 };
 ---
 
 <PageLayout content={content}>
-  <HeroWithBackground />
+  <HeroWithBackground title="Pricing" />
   <div class="px-5 md:px-15 lg:px-28">
+    <PricingComponent />
     <HeroWithImage />
     <HeroWithImage reversed />
     <HeroWithForm />

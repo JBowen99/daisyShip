@@ -23,6 +23,10 @@ export const NavbarData = {
             ]
         },
         {
+            text: 'Pricing',
+            href: '/pricing'
+        },
+        {
             text: 'Contact',
             href: '/contact'
         },

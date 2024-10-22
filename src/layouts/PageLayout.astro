@@ -5,19 +5,18 @@ import Navbar from "../components/Navbar.astro";
 const { content } = Astro.props;
 ---
 
-<html lang="en" data-theme="cyberpunk">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{content.title}</title>
+<html lang="en" data-theme="cmyk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{content.title}</title>
 
-        <Navbar />
-	</head>
-	<body>
-        <div class="flex flex-col justify-center items-center">
-            <slot />
-        </div>
-	</body>
-    <Footer />
+    <Navbar />
+  </head>
+  <body>
+    <div class="flex flex-col justify-center items-center">
+      <slot />
+    </div>
+  </body><Footer />
 </html>

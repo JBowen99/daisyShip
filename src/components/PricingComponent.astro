@@ -1,0 +1,66 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="flex flex-col justify-center items-center">
+  <span>Available Plans</span>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+    <div class="card card-compact bg-base-100 shadow-xl">
+      <div class="card-body items-center">
+        <h2 class="card-title text-4xl">Basic</h2>
+        <h3 class="text-xl">Best for personal use</h3>
+        <h3 class="font-bold text-5xl">$25</h3>
+        <span class="text-md">per month</span>
+        <div
+          class="flex flex-col w-full justify-start items-start space-y-3 mb-3"
+        >
+          <span class="flex flex-row items-center space-x-2 text-xl"
+            ><Icon name="tabler:circle-check-filled" /><p>Basic Usage</p>
+          </span>
+          <span class="flex flex-row items-center space-x-2 text-xl"
+            ><Icon name="tabler:circle-check-filled" /><p>Basic Usage</p>
+          </span>
+          <span class="flex flex-row items-center space-x-2 text-xl"
+            ><Icon name="tabler:circle-check-filled" /><p>Basic Usage</p>
+          </span>
+          <span class="flex flex-row items-center space-x-2 text-xl"
+            ><Icon name="tabler:circle-check-filled" /><p>Basic Usage</p>
+          </span>
+        </div>
+        <div class="card-actions justify-center">
+          <button class="btn btn-primary">Buy Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="card bg-base-100 shadow-xl">
+      <div class="card-body">
+        <h2 class="card-title">Basic</h2>
+        <p>Best for personal use</p>
+        <p>$25/mo</p>
+        <p>Includes:</p>
+        <p>Basic Usage</p>
+        <p>Basic Usage</p>
+        <p>Basic Usage</p>
+        <p>Basic Usage</p>
+        <div class="card-actions justify-center">
+          <button class="btn btn-primary">Buy Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="card bg-base-100 shadow-xl">
+      <div class="card-body">
+        <h2 class="card-title">Basic</h2>
+        <p>Best for personal use</p>
+        <p>$25/mo</p>
+        <p>Includes:</p>
+        <p>Basic Usage</p>
+        <p>Basic Usage</p>
+        <p>Basic Usage</p>
+        <p>Basic Usage</p>
+        <div class="card-actions justify-center">
+          <button class="btn btn-primary">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
