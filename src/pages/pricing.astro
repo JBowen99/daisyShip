@@ -1,6 +1,6 @@
 ---
 // Component Imports
-import PricingComponent from "~/components/PricingComponent.astro";
+import PricingSection from "~/components/PricingSection.astro";
 import Button from "../components/Button.astro";
 import HeroWithBackground from "../components/HeroWithBackground.astro";
 import HeroWithForm from "../components/HeroWithForm.astro";
@@ -10,14 +10,42 @@ import PageLayout from "../layouts/PageLayout.astro";
 const content = {
   title: "Pricing",
 };
+
+const pricingPlans = [
+  {
+    title: "Basic",
+    subtitle: "Best for personal use",
+    price: "$25",
+    period: "per month",
+    features: ["Basic Usage", "Basic Usage", "Basic Usage", "Basic Usage"],
+    buttonText: "Buy Now",
+  },
+  {
+    title: "Pro",
+    subtitle: "Best for professional use",
+    price: "$50",
+    period: "per month",
+    features: ["Pro Usage", "Pro Usage", "Pro Usage", "Pro Usage"],
+    buttonText: "Buy Now",
+  },
+  {
+    title: "Enterprise",
+    subtitle: "Best for large business use",
+    price: "$100",
+    period: "per month",
+    features: [
+      "Enterprise Usage",
+      "Enterprise Usage",
+      "Enterprise Usage",
+      "Enterprise Usage",
+    ],
+    buttonText: "Buy Now",
+  },
+];
 ---
 
 <PageLayout content={content}>
-  <HeroWithBackground title="Pricing" />
-  <div class="px-5 md:px-15 lg:px-28">
-    <PricingComponent />
-    <HeroWithImage />
-    <HeroWithImage reversed />
-    <HeroWithForm />
+  <div class="px-5 md:px-12 lg:px-12">
+    <PricingSection plans={pricingPlans} />
   </div>
 </PageLayout>

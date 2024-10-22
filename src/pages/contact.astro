@@ -1,0 +1,19 @@
+---
+// Component Imports
+import Button from "../components/Button.astro";
+import HeroWithBackground from "../components/HeroWithBackground.astro";
+import HeroWithForm from "../components/HeroWithForm.astro";
+import HeroWithImage from "../components/HeroWithImage.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+
+const content = {
+  title: "Contact Us",
+};
+---
+
+<PageLayout content={content}>
+  <HeroWithBackground title="Contact" />
+  <div class="px-5 md:px-15 lg:px-28">
+    <HeroWithForm />
+  </div>
+</PageLayout>

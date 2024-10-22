@@ -1,0 +1,25 @@
+---
+import PricingCard from "./PricingCard.astro";
+
+interface PricingPlan {
+  title: string;
+  subtitle: string;
+  price: string;
+  period: string;
+  features: string[];
+  buttonText: string;
+}
+
+interface PricingProps {
+  plans: PricingPlan[];
+}
+
+const { plans } = Astro.props as PricingProps;
+---
+
+<div class="flex flex-col justify-center items-center py-32">
+  <span class="mb-24 text-5xl font-bold">Available Pricing Plans</span>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+    {plans.map((plan) => <PricingCard {...plan} />)}
+  </div>
+</div>

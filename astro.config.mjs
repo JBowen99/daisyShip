@@ -9,6 +9,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     icon({
+      iconDir: "src/icons",
       include: {
         tabler: ["*"],
       },
