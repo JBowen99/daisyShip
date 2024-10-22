@@ -1,24 +1,21 @@
 ---
 // Component Imports
 import Button from '../components/Button.astro';
+import HeroWithBackground from '../components/HeroWithBackground.astro';
+import HeroWithForm from '../components/HeroWithForm.astro';
+import HeroWithImage from '../components/HeroWithImage.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+const content = {
+  title: "Home Page"
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
-
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
-	</body>
-</html>
+<PageLayout content={content}>
+	<HeroWithBackground />
+	<div class="px-5 md:px-15">
+		<HeroWithImage />
+		<HeroWithImage reversed />
+		<HeroWithForm />
+	</div>
+</PageLayout>

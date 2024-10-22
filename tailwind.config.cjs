@@ -3,5 +3,10 @@ module.exports = {
 	theme: {
 		extend: {},
 	},
-	plugins: [],
+	daisyui: {
+		themes: ["light", "dark", "cupcake", 'cyberpunk', 'cmyk', 'luxury', 'lemonade', 'night', 'coffee', 'dim', 'pastel'],
+	  },
+	plugins: [
+		require('daisyui'),
+	],
 };
