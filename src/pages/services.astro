@@ -1,0 +1,62 @@
+---
+// Component Imports
+import PageLayout from "../layouts/PageLayout.astro";
+const content = {
+  title: "Home Page",
+};
+import HeroText from "~/components/HeroText.astro";
+
+import ServiceWithImage from "~/components/ServiceWithImage.astro";
+import type { Service } from "../types/Service";
+
+const services: Service[] = [
+  {
+    title: "Web Development",
+    description: "We create high-performance, responsive websites.",
+    icon: "tabler:world-www",
+  },
+  {
+    title: "SEO Optimization",
+    description: "We improve your site’s visibility on search engines.",
+    icon: "tabler:search",
+  },
+  {
+    title: "Graphic Design",
+    description: "Stunning designs that capture your brand’s essence.",
+    icon: "tabler:palette",
+  },
+  {
+    title: "Content Creation",
+    description: "We create engaging content for your audience.",
+    icon: "tabler:file",
+  },
+];
+
+const photoUrl =
+  "https://images.pexels.com/photos/33999/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+const photoUrl2 =
+  "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+---
+
+<PageLayout content={content}>
+  <HeroText title="Services" subtitle="Learn more about what we do!" />
+  <div class="w-3/4">
+    <div id="service1">
+      <ServiceWithImage
+        title="Our Expertise"
+        subtitle="Here are some of the services we offer to help your business grow."
+        services={services}
+        imgSrc={photoUrl}
+      />
+    </div>
+    <div id="service2">
+      <ServiceWithImage
+        title="Our Offer"
+        subtitle="Here are some more things we can do for you."
+        services={services}
+        imgSrc={photoUrl2}
+        reversed
+      />
+    </div>
+  </div>
+</PageLayout>

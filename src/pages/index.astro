@@ -1,21 +1,86 @@
 ---
 // Component Imports
-import Button from "../components/Button.astro";
 import HeroWithBackground from "../components/HeroWithBackground.astro";
-import HeroWithForm from "../components/HeroWithForm.astro";
-import HeroWithImage from "../components/HeroWithImage.astro";
+import ImageSide from "../components/ImageSide.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 
 const content = {
   title: "Home Page",
 };
+
+import Testimonials from "../components/Testimonials.astro";
+import type { Testimonial } from "../types/Testimonial";
+
+const testimonials: Testimonial[] = [
+  {
+    name: "John Doe",
+    title: "CEO of Company Y",
+    message: "This service is amazing! Highly recommended.",
+    avatarUrl: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Jane Smith",
+    title: "Marketing Manager at Company Z",
+    message: "A wonderful experience from start to finish.",
+    avatarUrl: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Sam Wilson",
+    title: "Freelancer",
+    message: "Professional and timely. Couldn’t ask for more.",
+    avatarUrl: "https://via.placeholder.com/150",
+  },
+];
+
+import Features from "../components/Features.astro";
+import type { Feature } from "../types/Feature";
+import { Icon } from "astro-icon/components";
+
+const features: Feature[] = [
+  {
+    title: "Fast Performance",
+    description: "Experience blazing fast load times and smooth interactions.",
+    icon: "tabler:rocket", // Iconify icon name (from Tabler Icons)
+  },
+  {
+    title: "Secure",
+    description:
+      "We prioritize your data security with industry-leading standards.",
+    icon: "tabler:shield", // Iconify icon name (from Material Design Icons)
+  },
+  {
+    title: "Scalable",
+    description:
+      "Our platform is ready to grow with your business, effortlessly scaling.",
+    icon: "tabler:chart-line", // Iconify icon name (from Google Material Icons)
+  },
+];
 ---
 
 <PageLayout content={content}>
-  <HeroWithBackground />
+  <div class="relative w-full">
+    <HeroWithBackground
+      title="DaisyShip"
+      text="The best Astro + Tailwind template"
+      imgSrc="https://images.pexels.com/photos/1037994/pexels-photo-1037994.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      buttonText="Get Started"
+      button
+    />
+    <div class="absolute top-10 w-full flex flex-row justify-center">
+      <Icon name="daisyShip" size={200} />
+    </div>
+  </div>
   <div class="px-5 md:px-15 lg:px-28">
-    <HeroWithImage />
-    <HeroWithImage reversed />
-    <HeroWithForm />
+    <ImageSide
+      imgSrc="https://images.pexels.com/photos/1407325/pexels-photo-1407325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    />
+    <ImageSide
+      imgSrc="https://images.pexels.com/photos/59984/daisies-white-flower-face-59984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      imageWidth="w-1/2"
+      reversed
+    />
+
+    <Features features={features} />
+    <Testimonials testimonials={testimonials} title="What Our Clients Say" />
   </div>
 </PageLayout>

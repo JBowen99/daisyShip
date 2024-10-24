@@ -1,0 +1,84 @@
+---
+import type { Testimonial } from "~/types/Testimonial";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  testimonials: Testimonial[];
+}
+
+const {
+  title = "What Our Clients Say",
+  subtitle = "Real reviews from real people",
+  testimonials,
+} = Astro.props;
+---
+
+<section class="py-20">
+  {title && <h1 class="text-title font-title text-center">{title}</h1>}
+  {
+    subtitle && (
+      <h2 class="text-subtitle font-subtitle text-center">{subtitle}</h2>
+    )
+  }
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+    {
+      testimonials.map((testimonial) => (
+        <div class="card w-full bg-base-100 shadow-xl">
+          <div class="card-body">
+            <div class="flex items-center space-x-4 mb-4">
+              <img
+                src={testimonial.avatarUrl}
+                alt={testimonial.name}
+                class="w-12 h-12 rounded-full"
+              />
+              <div>
+                <h3 class="text-subtitle font-subtitle">{testimonial.name}</h3>
+                <p class="text-gray-500 text-infotext font-infotext">
+                  {testimonial.title}
+                </p>
+              </div>
+            </div>
+            <p class="text-gray-700 text-text font-texxt">
+              "{testimonial.message}"
+            </p>
+            <div class="w-full flex flex-row justify-center items-center">
+              <div class="rating">
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star"
+                  disabled
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star"
+                  disabled
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star"
+                  disabled
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star"
+                  disabled
+                />
+                <input
+                  type="radio"
+                  name="rating-1"
+                  class="mask mask-star"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

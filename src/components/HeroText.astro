@@ -36,24 +36,18 @@ const formFields: FormField[] = [
 interface Props {
   title?: string;
   text?: string;
+  subtitle?: string;
 }
 
-const { title, text } = Astro.props as Props;
+const { title, text, subtitle } = Astro.props as Props;
 ---
 
-<div class="hero bg-base-500 min-h-screen">
-  <div class="hero-content grid grid-cols-1 md:grid-cols-2">
-    <div class="text-center lg:text-left basis-1">
-      {title && <h1 class="text-5xl font-bold">{title}</h1>}
-      {text && <p class="py-6">{text}</p>}
-    </div>
-    <div class="card bg-base-100 w-full shadow-2xl basis-1">
-      <Form
-        fields={formFields}
-        submitButtonText="Submit"
-        title="Contact Us"
-        infotext="We will get back to you within 24 hours"
-      />
+<div class="hero bg-base-500 py-20">
+  <div class="hero-content flex flex-col">
+    <div class="text-center">
+      {title && <h1 class="text-title font-title">{title}</h1>}
+      {subtitle && <h2 class="py-6 text-subtitle font-subtitle">{subtitle}</h2>}
+      {text && <p class="py-6 text-text font-text">{text}</p>}
     </div>
   </div>
 </div>

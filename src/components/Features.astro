@@ -1,0 +1,39 @@
+---
+import type { Feature } from "~/types/Feature";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  features: Feature[];
+}
+
+const { title = "Features", subtitle = "Key Features", features } = Astro.props;
+---
+
+<section class="py-20 bg-white">
+  {title && <h1 class="text-title font-title text-center">{title}</h1>}
+  {
+    subtitle && (
+      <h2 class="text-subtitle font-subtitle text-center">{subtitle}</h2>
+    )
+  }
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+    {
+      features.map((feature) => (
+        <div class="card w-full bg-base-100 shadow-xl flex flex-col items-center">
+          <div class="card-body text-center">
+            <h3 class="text-subtitle font-subtitle">{feature.title}</h3>
+            <Icon
+              name={feature.icon}
+              class="w-12 h-12 mt-4 mx-auto text-primary"
+            />
+            <p class="text-gray-600 mt-4 text-text font-text">
+              {feature.description}
+            </p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

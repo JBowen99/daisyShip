@@ -1,0 +1,49 @@
+---
+import type { Service } from "../types/Service";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  title: string;
+  subtitle: string;
+  services: Service[];
+  imgSrc: string;
+  reversed?: boolean;
+}
+
+const { title, subtitle, services, imgSrc, reversed = false } = Astro.props;
+---
+
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-4">{title}</h2>
+    <p class="text-xl text-center mb-8 text-gray-600">{subtitle}</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <!-- Services Column -->
+      <div class="space-y-6">
+        {
+          services.map((service, index) => (
+            <div class="flex items-start gap-4">
+              {service.icon && (
+                <Icon name={service.icon} class="w-8 h-8 text-primary" />
+              )}
+              <div>
+                <h3 class="text-xl font-bold mb-1">{service.title}</h3>
+                <p class="text-gray-600">{service.description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Photo Column -->
+      <div class=`flex justify-center ${reversed && "order-first"}`>
+        <img
+          src={imgSrc}
+          alt="Service Image"
+          class="rounded-lg shadow-lg w-full"
+        />
+      </div>
+    </div>
+  </div>
+</section>

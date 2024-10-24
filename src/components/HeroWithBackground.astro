@@ -1,23 +1,36 @@
 ---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  text?: string;
+  button?: boolean;
+  buttonText?: string;
+  imgSrc: string;
+}
 const {
-  title = "DaisyShip",
-  text = "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.",
+  title,
+  subtitle,
+  text,
+  imgSrc,
   buttonText = "Get Started",
+  button = true,
 } = Astro.props;
 ---
 
-<div
-  class="hero min-h-screen"
-  style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);"
->
+<div class="hero min-h-screen" style=`background-image: url(${imgSrc});`>
   <div class="hero-overlay bg-opacity-60"></div>
   <div class="hero-content text-neutral-content text-center">
     <div class="max-w-md">
-      <h1 class="mb-5 text-5xl font-bold">{title}</h1>
-      <p class="mb-5">
-        {text}
-      </p>
-      <button class="btn btn-primary">{buttonText}</button>
+      {title && <h1 class="text-title font-title">{title}</h1>}
+      {subtitle && <h2 class="mt-3 text-subtitle font-subtitle">{subtitle}</h2>}
+      {text && <p class="mt-3 text-text font-text">{text}</p>}
+      {
+        button && (
+          <button class="btn btn-primary text-buttontext font-buttontext mt-5">
+            {buttonText}
+          </button>
+        )
+      }
     </div>
   </div>
 </div>

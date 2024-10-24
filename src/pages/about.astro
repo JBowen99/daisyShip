@@ -1,21 +1,51 @@
 ---
 // Component Imports
-import Button from "../components/Button.astro";
 import HeroWithBackground from "../components/HeroWithBackground.astro";
-import HeroWithForm from "../components/HeroWithForm.astro";
-import HeroWithImage from "../components/HeroWithImage.astro";
 import PageLayout from "../layouts/PageLayout.astro";
+import FAQ from "~/components/FAQ.astro";
 
 const content = {
   title: "Home Page",
 };
+
+const questionList = [
+  { question: "Question 1", answer: "Answer 1" },
+  { question: "Question 2", answer: "Answer 2" },
+  { question: "Question 3", answer: "Answer 3" },
+];
+
+import Process from "../components/Process.astro";
+import type { ProcessStep } from "../types/ProcessStep";
+import HeroText from "~/components/HeroText.astro";
+
+const processSteps: ProcessStep[] = [
+  {
+    title: "Step 1: Planning",
+    description:
+      "We collaborate with you to understand the scope of your project.",
+    icon: "tabler:brain", // Iconify icon (from Tabler Icons)
+  },
+  {
+    title: "Step 2: Design",
+    description: "Our design team creates mockups based on your feedback.",
+    icon: "tabler:pencil", // Iconify icon (from Tabler Icons)
+  },
+  {
+    title: "Step 3: Development",
+    description:
+      "We start developing the product with clean and scalable code.",
+    icon: "tabler:code",
+  },
+  {
+    title: "Step 4: Launch",
+    description: "We launch the product and ensure smooth operations.",
+    icon: "tabler:rocket",
+  },
+];
 ---
 
 <PageLayout content={content}>
-  <HeroWithBackground title="About" />
-  <div class="px-5 md:px-15 lg:px-28">
-    <HeroWithImage />
-    <HeroWithImage reversed />
-    <HeroWithForm />
-  </div>
+  <HeroText title="About Us" subtitle="Learn more about how we work!" />
+  <Process steps={processSteps} title="Our Design Process" />
+  <div class="px-5 md:px-15 w-1/2 py-20"><FAQ questions={questionList} /></div>
 </PageLayout>

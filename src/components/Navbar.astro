@@ -1,11 +1,9 @@
 ---
 import { NavbarData } from "~/navigation";
 import Logo from "./Logo.astro";
-
-console.log(NavbarData.links);
 ---
 
-<div class="navbar bg-base-100">
+<div class="navbar bg-accent">
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -78,6 +76,7 @@ console.log(NavbarData.links);
     </ul>
   </div>
   <div class="navbar-end">
-    <a class="btn">Button</a>
+    <a class="btn btn-accent-content" href="https://github.com">Get Template!</a
+    >
   </div>
 </div>

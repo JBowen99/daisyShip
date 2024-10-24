@@ -1,0 +1,52 @@
+---
+interface Props {
+  title?: string;
+  text?: string;
+  questions: FAQ[];
+}
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+const questionList = [
+  { question: "Question 1", answer: "Answer 1" },
+  { question: "Question 2", answer: "Answer 2" },
+  { question: "Question 3", answer: "Answer 3" },
+];
+
+const {
+  title = "FAQ",
+  text = "Frequently Asked Questions",
+  questions = questionList,
+} = Astro.props as Props;
+
+console.log(questionList);
+---
+
+<section class="py-20">
+  <div class="text-center mb-10">
+    {title && <h1 class="text-title font-title">{title}</h1>}
+    {text && <p class="text-text font-text">{text}</p>}
+  </div>
+  {
+    questions.map((question, index) => {
+      return (
+        <>
+          <div
+            tabindex={index}
+            class={`collapse collapse-arrow rounded-none ${index < questions.length - 1 ? "border-b-2 focus:border-b-0" : ""} `}
+          >
+            <div class="collapse-title text-subtitle font-subtitle">
+              {question.question}
+            </div>
+            <div class="collapse-content text-text font-text">
+              <p>{question.answer}</p>
+            </div>
+          </div>
+        </>
+      );
+    })
+  }
+</section>

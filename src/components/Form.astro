@@ -1,0 +1,86 @@
+---
+interface FormField {
+  label: string;
+  type:
+    | "text"
+    | "email"
+    | "password"
+    | "number"
+    | "textarea"
+    | "checkbox"
+    | "radio"
+    | "select";
+  name: string;
+  placeholder?: string;
+  options?: string[]; // For select and radio fields
+}
+
+interface Props {
+  fields: FormField[];
+  submitButtonText?: string;
+  title?: string;
+  infotext?: string;
+}
+
+const { fields, submitButtonText = "Submit", title, infotext } = Astro.props;
+---
+
+<form class="space-y-4 card-body w-full">
+  {title && <span class="text-3xl">{title}</span>}
+  <div class="form-control">
+    {
+      fields.map((field) => (
+        <div class="flex flex-col space-y-2">
+          <label for={field.name} class="label">
+            <span class="label-text">{field.label}</span>
+          </label>
+
+          {field.type === "select" ? (
+            <select
+              name={field.name}
+              id={field.name}
+              class="border p-2 rounded"
+            >
+              {field.options?.map((option) => (
+                <option value={option}>{option}</option>
+              ))}
+            </select>
+          ) : field.type === "radio" ? (
+            <div class="flex space-x-4">
+              {field.options?.map((option) => (
+                <label>
+                  <input type="radio" name={field.name} value={option} />
+                  {option}
+                </label>
+              ))}
+            </div>
+          ) : field.type === "textarea" ? (
+            <textarea
+              name={field.name}
+              placeholder={field.placeholder}
+              class="border p-2 rounded textarea-md textarea-bordered min-h-32"
+            />
+          ) : (
+            <input
+              type={field.type}
+              name={field.name}
+              id={field.name}
+              placeholder={field.placeholder}
+              class="border p-2 rounded input input-bordered"
+            />
+          )}
+        </div>
+      ))
+    }
+
+    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded mt-5">
+      {submitButtonText}
+    </button>
+
+    {
+      infotext && (
+        <span class="text-md mt-5 font-light text-center">{infotext}</span>
+      )
+    }
+  </div>
+</form>
