@@ -1,27 +1,29 @@
 ---
 import { Icon } from "astro-icon/components";
+
+//TODO replace h2 with a with link
 ---
 
 <footer class="footer bg-base-200 text-base-content p-10">
   <nav>
-    <h6 class="footer-title">Services</h6>
-    <a class="link link-hover">Branding</a>
-    <a class="link link-hover">Design</a>
-    <a class="link link-hover">Marketing</a>
-    <a class="link link-hover">Advertisement</a>
+    <h1 class="footer-title">Services</h1>
+    <h2 class="link link-hover">Branding</h2>
+    <h2 class="link link-hover">Design</h2>
+    <h2 class="link link-hover">Marketing</h2>
+    <h2 class="link link-hover">Advertisement</h2>
   </nav>
   <nav>
-    <h6 class="footer-title">Company</h6>
-    <a class="link link-hover">About us</a>
-    <a class="link link-hover">Contact</a>
-    <a class="link link-hover">Jobs</a>
-    <a class="link link-hover">Press kit</a>
+    <h1 class="footer-title">Company</h1>
+    <h2 class="link link-hover">About us</h2>
+    <h2 class="link link-hover">Contact</h2>
+    <h2 class="link link-hover">Jobs</h2>
+    <h2 class="link link-hover">Press kit</h2>
   </nav>
   <nav>
-    <h6 class="footer-title">Legal</h6>
-    <a class="link link-hover">Terms of use</a>
-    <a class="link link-hover">Privacy policy</a>
-    <a class="link link-hover">Cookie policy</a>
+    <h1 class="footer-title">Legal</h1>
+    <h2 class="link link-hover">Terms of use</h2>
+    <h2 class="link link-hover">Privacy policy</h2>
+    <h2 class="link link-hover">Cookie policy</h2>
   </nav>
 </footer>
 <footer
@@ -37,13 +39,13 @@ import { Icon } from "astro-icon/components";
   </aside>
   <nav class="md:place-self-center md:justify-self-end">
     <div class="grid grid-flow-col gap-4 text-2xl">
-      <a href="https://x.com">
+      <a href="https://x.com" aria-label="Find us on X.com">
         <Icon name="tabler:brand-x" />
       </a>
-      <a href="https://instagram.com">
+      <a href="https://instagram.com" aria-label="Find us on Instagram.com">
         <Icon name="tabler:brand-instagram" />
       </a>
-      <a href="https://facebook.com">
+      <a href="https://facebook.com" aria-label="Find us on Facebook.com">
         <Icon name="tabler:brand-facebook" />
       </a>
     </div>

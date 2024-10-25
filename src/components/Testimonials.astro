@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import type { Testimonial } from "~/types/Testimonial";
 
 interface Props {
@@ -33,47 +34,24 @@ const {
                 class="w-12 h-12 rounded-full"
               />
               <div>
-                <h3 class="text-subtitle font-subtitle">{testimonial.name}</h3>
-                <p class="text-gray-500 text-infotext font-infotext">
+                <h3 class="text-base-content text-subtitle font-subtitle">
+                  {testimonial.name}
+                </h3>
+                <p class="text-base-content text-infotext font-infotext">
                   {testimonial.title}
                 </p>
               </div>
             </div>
-            <p class="text-gray-700 text-text font-texxt">
+            <p class="text-base-content text-text font-texxt">
               "{testimonial.message}"
             </p>
             <div class="w-full flex flex-row justify-center items-center">
               <div class="rating">
-                <input
-                  type="radio"
-                  name="rating-1"
-                  class="mask mask-star"
-                  disabled
-                />
-                <input
-                  type="radio"
-                  name="rating-1"
-                  class="mask mask-star"
-                  disabled
-                />
-                <input
-                  type="radio"
-                  name="rating-1"
-                  class="mask mask-star"
-                  disabled
-                />
-                <input
-                  type="radio"
-                  name="rating-1"
-                  class="mask mask-star"
-                  disabled
-                />
-                <input
-                  type="radio"
-                  name="rating-1"
-                  class="mask mask-star"
-                  disabled
-                />
+                <Icon name="tabler:star-filled" />
+                <Icon name="tabler:star-filled" />
+                <Icon name="tabler:star-filled" />
+                <Icon name="tabler:star-filled" />
+                <Icon name="tabler:star-filled" />
               </div>
             </div>
           </div>

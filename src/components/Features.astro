@@ -23,12 +23,14 @@ const { title = "Features", subtitle = "Key Features", features } = Astro.props;
       features.map((feature) => (
         <div class="card w-full bg-base-100 shadow-xl flex flex-col items-center">
           <div class="card-body text-center">
-            <h3 class="text-subtitle font-subtitle">{feature.title}</h3>
+            <h3 class="text-subtitle font-subtitle text-base-content">
+              {feature.title}
+            </h3>
             <Icon
               name={feature.icon}
               class="w-12 h-12 mt-4 mx-auto text-primary"
             />
-            <p class="text-gray-600 mt-4 text-text font-text">
+            <p class="text-base-content mt-4 text-text font-text">
               {feature.description}
             </p>
           </div>

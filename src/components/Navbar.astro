@@ -14,7 +14,12 @@ const { sticky = false } = Astro.props;
 >
   <div class="navbar-start">
     <div class="dropdown">
-      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+      <div
+        tabindex="0"
+        role="button"
+        aria-label="menu dropdown"
+        class="btn btn-ghost lg:hidden"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-5 w-5"
@@ -58,7 +63,9 @@ const { sticky = false } = Astro.props;
         </div>
       </ul>
     </div>
-    <a class="btn btn-ghost text-xl"><Logo /></a>
+    <a class="btn btn-ghost text-xl" href="/" aria-label="Go to home page"
+      ><Logo /></a
+    >
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
@@ -93,6 +100,6 @@ const { sticky = false } = Astro.props;
   </div>
 
   <div class="navbar-end">
-    <a class="btn btn-outline" href="https://github.com">Get Template!</a>
+    <a class="btn btn-accent" href="https://github.com">Get Template!</a>
   </div>
 </div>
