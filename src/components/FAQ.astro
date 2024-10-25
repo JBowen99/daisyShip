@@ -21,8 +21,6 @@ const {
   text = "Frequently Asked Questions",
   questions = questionList,
 } = Astro.props as Props;
-
-console.log(questionList);
 ---
 
 <section class="py-20">
@@ -36,7 +34,7 @@ console.log(questionList);
         <>
           <div
             tabindex={index}
-            class={`collapse collapse-arrow rounded-none ${index < questions.length - 1 ? "border-b-2 focus:border-b-0" : ""} `}
+            class={`collapse collapse-arrow rounded-none ${index < questions.length - 1 ? "border-b-2 border-primary focus:border-b-0" : ""} `}
           >
             <div class="collapse-title text-subtitle font-subtitle">
               {question.question}

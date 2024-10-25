@@ -58,7 +58,7 @@ const { fields, submitButtonText = "Submit", title, infotext } = Astro.props;
             <textarea
               name={field.name}
               placeholder={field.placeholder}
-              class="border p-2 rounded textarea-md textarea-bordered min-h-32"
+              class="border p-2 rounded bg-transparent textarea-md textarea-bordered min-h-32"
             />
           ) : (
             <input
@@ -73,7 +73,10 @@ const { fields, submitButtonText = "Submit", title, infotext } = Astro.props;
       ))
     }
 
-    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded mt-5">
+    <button
+      type="submit"
+      class="btn btn-primary text-primary-content py-2 px-4 rounded mt-5"
+    >
       {submitButtonText}
     </button>
 

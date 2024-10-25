@@ -55,6 +55,8 @@ const features: Feature[] = [
     icon: "tabler:chart-line", // Iconify icon name (from Google Material Icons)
   },
 ];
+
+import CTA from "~/components/CTA.astro";
 ---
 
 <PageLayout content={content}>
@@ -82,5 +84,13 @@ const features: Feature[] = [
 
     <Features features={features} />
     <Testimonials testimonials={testimonials} title="What Our Clients Say" />
+  </div>
+  <div class="w-full">
+    <CTA
+      title="Ready to take the next step?"
+      description="Join us today and unlock your potential with our services."
+      buttonText="Get Started"
+      buttonUrl="/contact"
+    />
   </div>
 </PageLayout>

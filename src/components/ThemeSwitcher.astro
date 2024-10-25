@@ -1,0 +1,143 @@
+---
+// ThemeSwitcher.astro
+import { Icon } from "astro-icon/components";
+
+const themelist = [
+  "light",
+  "dark",
+  "cupcake",
+  "bumblebee",
+  "emerald",
+  "corporate",
+  "synthwave",
+  "retro",
+  "cyberpunk",
+  "valentine",
+  "halloween",
+  "garden",
+  "forest",
+  "aqua",
+  "lofi",
+  "pastel",
+  "fantasy",
+  "wireframe",
+  "black",
+  "luxury",
+  "dracula",
+  "cmyk",
+  "autumn",
+  "business",
+  "acid",
+  "lemonade",
+  "night",
+  "coffee",
+  "winter",
+  "dim",
+  "nord",
+  "sunset",
+];
+---
+
+<div class="dropdown dropdown-end">
+  <div tabindex="0" role="button" class="btn btn-ghost">
+    <Icon name="tabler:switch" />
+  </div>
+  <ul
+    tabindex="0"
+    class="dropdown-content z-50 menu p-2 shadow bg-base-100 rounded-box w-52"
+  >
+    <li>
+      <button class="theme-item" data-theme="light">
+        <Icon name="tabler:sun" />
+        Light
+      </button>
+    </li>
+    <li>
+      <button class="theme-item" data-theme="dark">
+        <Icon name="tabler:moon" />
+        Dark
+      </button>
+    </li>
+    <li>
+      <button class="theme-item" data-theme="system">
+        <Icon name="tabler:screen-share" />
+        System
+      </button>
+    </li>
+    <div class="mt-2 w-48 max-h-60 overflow-y-auto p-2 space-y-5">
+      {
+        themelist.map((e) => {
+          return (
+            <li>
+              <button class="theme-item" data-theme={e}>
+                <div class="flex flex-row justify-center items-center text-4xl">
+                  <p class="text-primary">▪</p>
+                  <p class="text-secondary">▪</p>
+                  <p class="text-accent">▪</p>
+                  <p class="text-base-200">▪</p>
+                </div>
+                {e}
+              </button>
+            </li>
+          );
+        })
+      }
+    </div>
+  </ul>
+</div>
+
+<script>
+  // Function to update the theme
+  function updateTheme(theme: string) {
+    // Handle system theme
+    if (theme === "system") {
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "dark"
+        : "light";
+      document.documentElement.setAttribute("data-theme", systemTheme);
+    } else {
+      document.documentElement.setAttribute("data-theme", theme);
+    }
+
+    localStorage.setItem("theme", theme);
+    updateActiveIcon(theme);
+  }
+
+  // Function to update the visible icon
+  function updateActiveIcon(theme: string) {
+    const sunIcon = document.querySelector(".sun-icon");
+    const moonIcon = document.querySelector(".moon-icon");
+    const systemIcon = document.querySelector(".system-icon");
+
+    sunIcon?.classList.add("hidden");
+    moonIcon?.classList.add("hidden");
+    systemIcon?.classList.add("hidden");
+
+    if (theme === "light") sunIcon?.classList.remove("hidden");
+    if (theme === "dark") moonIcon?.classList.remove("hidden");
+    if (theme === "system") systemIcon?.classList.remove("hidden");
+  }
+
+  // Initialize theme
+  const savedTheme = localStorage.getItem("theme") || "system";
+  updateTheme(savedTheme);
+
+  // Add click handlers to theme buttons
+  document.querySelectorAll(".theme-item").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const theme = (e.currentTarget as HTMLButtonElement).dataset.theme;
+      if (theme) updateTheme(theme);
+    });
+  });
+
+  // Listen for system theme changes if using system theme
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", () => {
+      const currentTheme = localStorage.getItem("theme");
+      if (currentTheme === "system") {
+        updateTheme("system");
+      }
+    });
+</script>

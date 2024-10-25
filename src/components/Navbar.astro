@@ -1,9 +1,17 @@
 ---
 import { NavbarData } from "~/navigation";
 import Logo from "./Logo.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import ThemeSwitcher from "./ThemeSwitcher.astro";
+import ThemeToggleMobile from "./ThemeToggleMobile.astro";
+
+// Accept the sticky prop
+const { sticky = false } = Astro.props;
 ---
 
-<div class="navbar bg-accent">
+<div
+  class=`navbar bg-primary text-primary-content ${sticky ? 'sticky top-0 z-50' : ''}`
+>
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -23,7 +31,7 @@ import Logo from "./Logo.astro";
       </div>
       <ul
         tabindex="0"
-        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-base-content"
       >
         {
           NavbarData.links.map(({ text, href, links }) => (
@@ -45,6 +53,9 @@ import Logo from "./Logo.astro";
             </li>
           ))
         }
+        <div class="flex flex-row justify-center items-center">
+          <ThemeToggleMobile />
+        </div>
       </ul>
     </div>
     <a class="btn btn-ghost text-xl"><Logo /></a>
@@ -60,7 +71,10 @@ import Logo from "./Logo.astro";
                 <ul class="p-2">
                   {links.map((sublink) => (
                     <li>
-                      <a href={sublink.href} class="text-nowrap">
+                      <a
+                        href={sublink.href}
+                        class="text-nowrap text-base-content"
+                      >
                         {sublink.text}
                       </a>
                     </li>
@@ -74,9 +88,11 @@ import Logo from "./Logo.astro";
         ))
       }
     </ul>
+    <ThemeToggle />
+    <ThemeSwitcher />
   </div>
+
   <div class="navbar-end">
-    <a class="btn btn-accent-content" href="https://github.com">Get Template!</a
-    >
+    <a class="btn btn-outline" href="https://github.com">Get Template!</a>
   </div>
 </div>
