@@ -9,13 +9,13 @@ interface CTAProps {
 const { title, description, buttonText, buttonUrl } = Astro.props as CTAProps;
 ---
 
-<section class="text-base-content py-20 bg-primary text-primary-content px-6">
+<section class="py-20 bg-primary text-primary-content px-6">
   <div class="container mx-auto text-center">
     <h2 class="text-3xl font-bold mb-4">{title}</h2>
     <p class="mb-8">{description}</p>
     <a
       href={buttonUrl}
-      class="btn btn-tertiary text-tertiary-content font-semibold py-2 px-6 rounded-lg hover:btn-accent-content transition"
+      class="btn btn-accent text-accent-content font-semibold py-2 px-6 hover:btn-secondary transition"
     >
       {buttonText}
     </a>
