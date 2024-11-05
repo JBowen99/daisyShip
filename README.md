@@ -2,6 +2,8 @@
 
 # 🪄 Setup
 
+**🚀 [Click here to use this template](https://github.com/JBowen99/daisyShip/generate)**
+
 To get up and running, first create a new Astro project with the template:
 
 `npm create astro@latest -- --template JBowen99/daisyShip`
