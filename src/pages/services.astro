@@ -1,14 +1,13 @@
 ---
-// Component Imports
-import PageLayout from "../layouts/PageLayout.astro";
+import HeroText from "~/components/HeroText.astro";
+import PageLayout from "~/layouts/PageLayout.astro";
+import ServiceWithImage from "~/components/ServiceWithImage.astro";
+import type { Service } from "~/types/Service";
+
 const content = {
   title: "Services",
   description: "Services",
 };
-import HeroText from "~/components/HeroText.astro";
-
-import ServiceWithImage from "~/components/ServiceWithImage.astro";
-import type { Service } from "../types/Service";
 
 const services: Service[] = [
   {

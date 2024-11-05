@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 
-interface PricingCardProps {
+interface Props {
   title: string;
   subtitle: string;
   price: string;
@@ -11,7 +11,7 @@ interface PricingCardProps {
 }
 
 const { title, subtitle, price, period, features, buttonText } =
-  Astro.props as PricingCardProps;
+  Astro.props as Props;
 ---
 
 <div class="card card-compact bg-base-100 shadow-xl min-w-80">

@@ -1,14 +1,6 @@
 ---
-import PricingCard from "./PricingCard.astro";
-
-interface PricingPlan {
-  title: string;
-  subtitle: string;
-  price: string;
-  period: string;
-  features: string[];
-  buttonText: string;
-}
+import PricingCard from "~/components/PricingCard.astro";
+import type { PricingPlan } from "~/types";
 
 interface PricingProps {
   plans: PricingPlan[];

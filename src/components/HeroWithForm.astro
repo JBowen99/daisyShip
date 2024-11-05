@@ -1,21 +1,6 @@
 ---
-import Form from "./Form.astro";
-
-interface FormField {
-  label: string;
-  type:
-    | "text"
-    | "email"
-    | "password"
-    | "number"
-    | "textarea"
-    | "checkbox"
-    | "radio"
-    | "select";
-  name: string;
-  placeholder?: string;
-  options?: string[]; // For select and radio fields
-}
+import Form from "~/components/Form.astro";
+import type { FormField } from "~/types";
 
 const formFields: FormField[] = [
   { label: "Name", type: "text", name: "name", placeholder: "Enter your name" },

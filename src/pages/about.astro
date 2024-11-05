@@ -1,8 +1,10 @@
 ---
 // Component Imports
-import HeroWithBackground from "../components/HeroWithBackground.astro";
-import PageLayout from "../layouts/PageLayout.astro";
+import PageLayout from "~/layouts/PageLayout.astro";
 import FAQ from "~/components/FAQ.astro";
+import Process from "~/components/Process.astro";
+import type { ProcessStep } from "~/types/ProcessStep";
+import HeroText from "~/components/HeroText.astro";
 
 const content = {
   title: "About Us",
@@ -14,10 +16,6 @@ const questionList = [
   { question: "Question 2", answer: "Answer 2" },
   { question: "Question 3", answer: "Answer 3" },
 ];
-
-import Process from "../components/Process.astro";
-import type { ProcessStep } from "../types/ProcessStep";
-import HeroText from "~/components/HeroText.astro";
 
 const processSteps: ProcessStep[] = [
   {

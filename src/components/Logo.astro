@@ -1,7 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
+
+interface Props {
+  size?: number;
+  title?: boolean;
+}
+
+const { size = 32, title = true } = Astro.props;
 ---
 
 <div class="flex flex-row items-center">
-  <Icon name="daisyShip" class="mr-3" size={32} />DaisyShip
+  <Icon name="daisyShip" class="mr-3" size={size} />{title && "DaisyShip"}
 </div>

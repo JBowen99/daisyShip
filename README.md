@@ -1,13 +1,101 @@
-# Astro with Tailwind
+# DaisyShip - The BEST Astro + Tailwind Template
 
-```sh
-npm create astro@latest -- --template with-tailwindcss
+# 🪄 Setup
+
+To get up and running, first create a new Astro project with the template:
+
+`npm create astro@latest -- --template JBowen99/daisyShip`
+
+After the projects is created, install dependencies:
+
+`cd DaisyShip`
+
+`npm install`
+
+To run the project:
+
+`npm run dev`
+
+Congrats! You're all setup and ready to start making your website!
+
+---
+
+# 🪜Project Layout
+
+Quick reference for the project layout
+
+```
+/
+├── public/
+│   └── favicon.ico and other public files should go here
+├── src/
+|   ├── assets/
+|   |   └── Assets you want optimized go here
+│   ├── components/
+│   │   └── Individual components and widgets
+│   ├── icons/
+│   │   └── Local directory for the Iconify [Astro Component] (https://github.com/natemoo-re/astro-icon)
+│   └── layouts/
+│   |   └── The main PageLayout.astro is here
+│   └── pages/
+│   |   └── Each page is stored here as an astro file
+│   └── pages/
+│       └── Each page is stored here as an astro file
+└── netlify.toml
+└── package.json
+└── tailwind.config.cjs
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/with-tailwindcss/devcontainer.json)
+# 💻 Project Commands
 
-Astro comes with [Tailwind](https://tailwindcss.com) support out of the box. This example showcases how to style your Astro project with Tailwind.
+Run commands from the root directory:
 
-For complete setup instructions, please see our [Tailwind Integration Guide](https://docs.astro.build/en/guides/integrations-guide/tailwind).
+| Command         | Action                                      |
+| :-------------- | :------------------------------------------ |
+| `npm install`   | Installs dependencies                       |
+| `npm run start` | Starts local dev server at `localhost:4321` |
+| `npm run build` | Build your production site to `./dist/`     |
+
+# ✨ Deploying
+
+A **netlify.toml** file is included to easily deploy to Netlify. The template should also be compatible with other hosting settings but you will need to modify settings to work with an Astro project.
+
+# 💡 Component Details
+
+### CTA
+
+### FAQ
+
+### Features
+
+### Footer
+
+### From
+
+### HeroText
+
+### HeroWithBackground
+
+### HeroWithForm
+
+### ImageSide
+
+### Logo
+
+### Navbar
+
+### PricingCard
+
+### PricingSection
+
+### Process
+
+### ServiceWithImage
+
+### Testimonials
+
+### ThemeSwitcher
+
+### ThemeToggle
+
+### ThemeToggleMobile

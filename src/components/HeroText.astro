@@ -1,38 +1,4 @@
 ---
-import Form from "./Form.astro";
-
-interface FormField {
-  label: string;
-  type:
-    | "text"
-    | "email"
-    | "password"
-    | "number"
-    | "textarea"
-    | "checkbox"
-    | "radio"
-    | "select";
-  name: string;
-  placeholder?: string;
-  options?: string[]; // For select and radio fields
-}
-
-const formFields: FormField[] = [
-  { label: "Name", type: "text", name: "name", placeholder: "Enter your name" },
-  {
-    label: "Email",
-    type: "email",
-    name: "email",
-    placeholder: "Enter your email",
-  },
-  {
-    label: "Message",
-    type: "textarea",
-    name: "message",
-    placeholder: "Enter your message",
-  },
-];
-
 interface Props {
   title?: string;
   text?: string;

@@ -1,19 +1,5 @@
 ---
-interface FormField {
-  label: string;
-  type:
-    | "text"
-    | "email"
-    | "password"
-    | "number"
-    | "textarea"
-    | "checkbox"
-    | "radio"
-    | "select";
-  name: string;
-  placeholder?: string;
-  options?: string[]; // For select and radio fields
-}
+import type { FormField } from "~/types";
 
 interface Props {
   fields: FormField[];

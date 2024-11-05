@@ -1,16 +1,18 @@
 ---
 // Component Imports
-import HeroWithBackground from "../components/HeroWithBackground.astro";
-import ImageSide from "../components/ImageSide.astro";
-import PageLayout from "../layouts/PageLayout.astro";
+import CTA from "~/components/CTA.astro";
+import Features from "~/components/Features.astro";
+import type { Feature } from "~/types/Feature";
+import HeroWithBackground from "~/components/HeroWithBackground.astro";
+import ImageSide from "~/components/ImageSide.astro";
+import PageLayout from "~/layouts/PageLayout.astro";
+import Testimonials from "~/components/Testimonials.astro";
+import type { Testimonial } from "~/types/Testimonial";
 
 const content = {
   title: "Home Page",
   description: "The best Astro + Tailwind template",
 };
-
-import Testimonials from "../components/Testimonials.astro";
-import type { Testimonial } from "../types/Testimonial";
 
 const testimonials: Testimonial[] = [
   {
@@ -33,10 +35,6 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-import Features from "../components/Features.astro";
-import type { Feature } from "../types/Feature";
-import { Icon } from "astro-icon/components";
-
 const features: Feature[] = [
   {
     title: "Fast Performance",
@@ -56,8 +54,6 @@ const features: Feature[] = [
     icon: "tabler:chart-line", // Iconify icon name (from Google Material Icons)
   },
 ];
-
-import CTA from "~/components/CTA.astro";
 ---
 
 <PageLayout content={content}>
@@ -69,9 +65,6 @@ import CTA from "~/components/CTA.astro";
       buttonText="Get Started"
       button
     />
-    <div class="absolute top-10 w-full flex flex-row justify-center">
-      <Icon name="daisyShip" size={200} />
-    </div>
   </div>
   <div class="px-5 md:px-15 lg:px-28">
     <ImageSide

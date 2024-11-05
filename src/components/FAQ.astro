@@ -1,13 +1,10 @@
 ---
+import type { FAQ } from "~/types";
+
 interface Props {
   title?: string;
   text?: string;
   questions: FAQ[];
-}
-
-interface FAQ {
-  question: string;
-  answer: string;
 }
 
 const questionList = [

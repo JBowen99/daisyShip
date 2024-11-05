@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-import type { Testimonial } from "~/types/Testimonial";
+import type { Testimonial } from "~/types";
 
 interface Props {
   title?: string;
@@ -22,7 +22,9 @@ const {
       <h2 class="text-subtitle font-subtitle text-center">{subtitle}</h2>
     )
   }
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 md:mt-24"
+  >
     {
       testimonials.map((testimonial) => (
         <div class="card w-full bg-base-100 shadow-xl">
