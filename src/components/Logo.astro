@@ -3,12 +3,12 @@ import { Icon } from "astro-icon/components";
 
 interface Props {
   size?: number;
-  title?: boolean;
+  showTitle?: boolean;
 }
 
-const { size = 32, title = true } = Astro.props;
+const { size = 32, showTitle = true } = Astro.props;
 ---
 
 <div class="flex flex-row items-center">
-  <Icon name="daisyShip" class="mr-3" size={size} />{title && "DaisyShip"}
+  <Icon name="daisyShip" class="mr-3" size={size} />{showTitle && "DaisyShip"}
 </div>
